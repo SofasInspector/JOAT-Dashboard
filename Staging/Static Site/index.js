@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error(error);
         }
+        updatecheckboxes()
     }
 
     // Function to handle checkbox change event
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function updatecheckboxes() {
     for (const checkboxName in checkboxes) {
         if (checkboxes.hasOwnProperty(checkboxName)) {
             const apiUrl = checkboxes[checkboxName];
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCheckboxState(checkboxElement, apiUrl);
             handleCheckboxChange(checkboxElement, apiUrl);
         }
-    }
+    }}
 
     const updateButton = document.getElementById('updateButton');
     updateButton.addEventListener('click', async function() {
@@ -55,4 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     })
+
+    updatecheckboxes()
 })
