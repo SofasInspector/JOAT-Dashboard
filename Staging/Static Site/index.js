@@ -1,40 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-const url = 'https://staging-joat-dashboard-web-server.onrender.com'
-const sliderjoat = document.getElementById('sliderjoat');
-console.log('js running')
+    const url = 'https://staging-joat-dashboard-web-server.onrender.com';
 
-///do later (sider lock)
-// Event listener for the lock button
-    // Disable or enable the slider based on the lock status
-//    slider1.disabled = !slider1.disabled;
+    // Get the checkboxs elements
+    const sliderjoat = document.getElementById('slider-joat');
+    const sliderjoatpath = '/ff/JOATWS'
 
-    // Change the appearance of the slider based on the lock status
-//    if (slider1.disabled) {
-        // If the slider is locked
-//        slider1.nextElementSibling.style.backgroundColor = '#999'; // Change slider color
-//        slider1.nextElementSibling.style.cursor = 'not-allowed'; // Change cursor style
-//    } else {
-        // If the slider is unlocked
-//        slider1.nextElementSibling.style.backgroundColor = '#555'; // Reset slider color
-//        slider1.nextElementSibling.style.cursor = 'pointer'; // Reset cursor style
-//    }
+    // Function to update checkbox state based on server response
+    function updateCheckboxState(path) {
+        // Fetch the state from the server
+        axios.get(url + path)
+            .then(response => {
+                sliderjoat.checked = (response.data === 1);
+            })
+    }
 
-// Event listener for the slider value change
-sliderjoat.addEventListener('change', function() {
-    console.log('slider change detected')
-    // Check if the slider is not disabled (unlocked)
-    if (!sliderjoat.disabled) {
+
+    // Add event listener for checkbox change event
+    sliderjoat.addEventListener('change', function() {
         // Perform actions based on the slider value
-        if (sliderjoat.checked) {
-            // Slider is checked (ON) - Do something
-            axios.get(url + '/ff/JOATWS/toggle', {
-                params: {
-                    Authorization: 'supersecreatpassword'
-                }
-              })
-        } else {
-            // Slider is unchecked (OFF) - Do something else
-            axios.get(url + '/ff/JOATWS/toggle', {
-                params: {
-                    Authorization: 'supersecreatpassword'
-                }})}}})})
+        axios.get(url + '/ff/JOATWS/toggle', {
+            params: {
+                Authorization: 'supersecretpassword',
+            }
+        })
+    });
+
+
+        // Initial update of checkbox state
+        updateCheckboxState(sliderjoatpath);
+});
