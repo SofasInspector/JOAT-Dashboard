@@ -95,3 +95,4 @@ app.get('/ff/template/toggle', async (req, res) => {
 
 
 app.listen(port)
+console.log('SERVER ONLINE')
