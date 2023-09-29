@@ -2,7 +2,10 @@
 express = require('express')
 const port = '443'
 const app = express()
-
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
 
 //server code for root
 console.log('server online')
