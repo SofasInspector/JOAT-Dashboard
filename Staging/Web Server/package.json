@@ -1,0 +1,14 @@
+{
+  "name": "joat-web-server-package",
+  "version": "0.0.1",
+  "description": "This is the package for the Jack Of All Trades personal dashboard web server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SofaS",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
