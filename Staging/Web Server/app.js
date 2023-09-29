@@ -13,8 +13,8 @@ app.get('/', async (req, res) => {
 
 
 //Feature Flags
-var FFJOATWebServer = '1'
-var FFTemplate = '1'
+var FFJOATWebServer = '0'
+var FFTemplate = '0'
 
 
 //Joat Web Server
@@ -42,7 +42,7 @@ app.get('/ff/JOATWS/toggle', async (req, res) => {
           var FFJOATWebServer = '1'
           res.send(1)
        }
-
+       console.log('JOATWS Toggled')
      } else {
        //auth incorrect
       res.status(401).send('ERROR 401 Authentication requiried')
@@ -79,7 +79,7 @@ app.get('/ff/template/toggle', async (req, res) => {
           var FFTemplate = '1'
           res.send(1)
        }
-       
+       console.log('Template Toggled')
      } else {
        //auth incorrect
       res.status(401).send('ERROR 401 Authentication requiried')
