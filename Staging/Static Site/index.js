@@ -23,9 +23,9 @@ console.log('js running')
 sliderjoat.addEventListener('change', function() {
     console.log('slider change detected')
     // Check if the slider is not disabled (unlocked)
-    if (!slider1.disabled) {
+    if (!sliderjoat.disabled) {
         // Perform actions based on the slider value
-        if (slider1.checked) {
+        if (sliderjoat.checked) {
             // Slider is checked (ON) - Do something
             axios.get(url + '/ff/JOATWS/toggle', {
                 params: {
