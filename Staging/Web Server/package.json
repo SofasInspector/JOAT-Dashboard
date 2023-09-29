@@ -1,6 +1,6 @@
 {
   "name": "joat-web-server-package",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This is the package for the Jack Of All Trades personal dashboard web server",
   "main": "app.js",
   "scripts": {

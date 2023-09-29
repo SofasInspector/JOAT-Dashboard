@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the checkbox elements and their corresponding variable names
     const checkboxes = {
         'sliderjoat': '/ff/JOATWS',
+        'slidertemp': '/ff/template',
     };
 
     // Function to update checkbox state based on server response
