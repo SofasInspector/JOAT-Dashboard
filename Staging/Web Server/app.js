@@ -24,7 +24,7 @@ var FFTemplate = '0'
 
 //check
 app.get('/ff/JOATWS', async (req, res) => {
-  if (req.Authorization = 'supersecreatpassword') {
+  if (req.Authorization == 'supersecreatpassword') {
       //authed
       res.send(FFJOATWebServer)
     } else {
@@ -34,15 +34,15 @@ app.get('/ff/JOATWS', async (req, res) => {
 
 //toggle
 app.get('/ff/JOATWS/toggle', async (req, res) => {
-  if (req.Authorization = 'supersecreatpassword') {
+  if (req.Authorization == 'supersecreatpassword') {
       //authed
 
       //toggle
        if (FFJOATWebServer = 1) {
-          var FFJOATWebServer = '0'
+          FFJOATWebServer = '0'
           res.send('0')
        } else {
-          var FFJOATWebServer = '1'
+          FFJOATWebServer = '1'
           res.send('1')
        }
        console.log('JOATWS Toggled')
@@ -57,7 +57,7 @@ app.get('/ff/JOATWS/toggle', async (req, res) => {
 //check
 app.get('/ff/template', async (req, res) => {
   if (FFJOATWebServer = '1') {
-    if (req.Authorization = 'supersecreatpassword') {
+    if (req.Authorization == 'supersecreatpassword') {
       //authed
       res.send(FFTemplate)
     } else {
@@ -71,15 +71,15 @@ app.get('/ff/template', async (req, res) => {
 //toggle
 app.get('/ff/template/toggle', async (req, res) => {
   if (FFJOATWebServer = '1') {
-    if (req.Authorization = 'supersecreatpassword') {
+    if (req.Authorization == 'supersecreatpassword') {
       //authed
 
       //toggle
        if (FFTemplate = 1) {
-          var FFTemplate = '0'
+          FFTemplate = '0'
           res.send('0')
        } else {
-          var FFTemplate = '1'
+          FFTemplate = '1'
           res.send('1')
        }
        console.log('Template Toggled')

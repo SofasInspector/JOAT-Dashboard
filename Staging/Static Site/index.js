@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fetch the state from the server
         axios.get(url + path)
             .then(response => {
-                sliderjoat.checked = (response.data === 1);
+                sliderjoat.checked = (parseInt(response.data, 10) === 1);
             })
     }
 
