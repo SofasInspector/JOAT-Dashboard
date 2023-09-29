@@ -1,4 +1,3 @@
-const axios = require('axios/dist/browser/axios.cjs');
 const url = 'https://staging-joat-dashboard-web-server.onrender.com/'
 const sliderjoat = document.getElementById('slider-joat');
 
