@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 const url = 'https://staging-joat-dashboard-web-server.onrender.com/'
 const sliderjoat = document.getElementById('slider-joat');
 
@@ -35,8 +36,4 @@ sliderjoat.addEventListener('change', function() {
             axios.get(url + '/ff/JOATWS/toggle', {
                 params: {
                     Authorization: supersecreatpassword
-                }
-              })
-        }
-    }
-});
+                }})}}})})
