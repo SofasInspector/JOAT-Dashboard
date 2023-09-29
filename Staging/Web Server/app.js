@@ -38,7 +38,7 @@ app.get('/ff/JOATWS/toggle', async (req, res) => {
       //authed
 
       //toggle
-       if (FFJOATWebServer = 1) {
+       if (FFJOATWebServer == '1') {
           FFJOATWebServer = '0'
           res.send('0')
        } else {
