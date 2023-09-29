@@ -26,7 +26,7 @@ app.get('/ff/JOATWS', async (req, res) => {
       res.send(FFJOATWebServer)
     } else {
       //auth incorrect
-      res.status(401).send('ERROR 401 Authentication requiried')
+      res.sendstatus(401).send('ERROR 401 Authentication requiried')
     }})
 
 //toggle
@@ -45,7 +45,7 @@ app.get('/ff/JOATWS/toggle', async (req, res) => {
        console.log('JOATWS Toggled')
      } else {
        //auth incorrect
-      res.status(401).send('ERROR 401 Authentication requiried')
+      res.sendstatus(401).send('ERROR 401 Authentication requiried')
     }})
 
 
@@ -59,10 +59,10 @@ app.get('/ff/template', async (req, res) => {
       res.send(FFTemplate)
     } else {
       //auth incorrect
-      res.status(401).send('ERROR 401 Authentication requiried')
+      res.sendstatus(401).send('ERROR 401 Authentication requiried')
     }
   } else {
-    res.status(503).send('Feature Flag for JOAT Web Server Disabled')
+    res.sendstatus(503).send('Feature Flag for JOAT Web Server Disabled')
   }})
 
 //toggle
@@ -82,10 +82,10 @@ app.get('/ff/template/toggle', async (req, res) => {
        console.log('Template Toggled')
      } else {
        //auth incorrect
-      res.status(401).send('ERROR 401 Authentication requiried')
+      res.sendstatus(401).send('ERROR 401 Authentication requiried')
     }
   } else {
-    res.status(503).send('Feature Flag for JOAT Web Server Disabled')
+    res.sendstatus(503).send('Feature Flag for JOAT Web Server Disabled')
   }})
 
 

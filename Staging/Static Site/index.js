@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 const url = 'https://staging-joat-dashboard-web-server.onrender.com/'
-const sliderjoat = document.getElementById('slider-joat');
+const sliderjoat = document.getElementById('sliderjoat');
 console.log('js running')
 
 //do later (sider lock)
@@ -29,12 +29,12 @@ sliderjoat.addEventListener('change', function() {
             // Slider is checked (ON) - Do something
             axios.get(url + '/ff/JOATWS/toggle', {
                 params: {
-                    Authorization: supersecreatpassword
+                    Authorization: 'supersecreatpassword'
                 }
               })
         } else {
             // Slider is unchecked (OFF) - Do something else
             axios.get(url + '/ff/JOATWS/toggle', {
                 params: {
-                    Authorization: supersecreatpassword
+                    Authorization: 'supersecreatpassword'
                 }})}}})})
