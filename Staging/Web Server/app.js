@@ -7,13 +7,8 @@ const app = express()
 //server code for root
 console.log('server online')
 app.get('/', async (req, res) => {
-    if (req.Authorization = 'supersecreatpassword') {
-        //authed
         res.send('JOAT Web Server Root Directory')
-      } else {
-        //auth incorrect
-        res.status(401).send('ERROR 401 Authentication requiried')
-      }})
+      })
 
 
 
