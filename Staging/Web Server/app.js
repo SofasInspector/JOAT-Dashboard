@@ -40,10 +40,10 @@ app.get('/ff/JOATWS/toggle', async (req, res) => {
       //toggle
        if (FFJOATWebServer = 1) {
           var FFJOATWebServer = '0'
-          res.send(0)
+          res.send('0')
        } else {
           var FFJOATWebServer = '1'
-          res.send(1)
+          res.send('1')
        }
        console.log('JOATWS Toggled')
      } else {
@@ -77,10 +77,10 @@ app.get('/ff/template/toggle', async (req, res) => {
       //toggle
        if (FFTemplate = 1) {
           var FFTemplate = '0'
-          res.send(0)
+          res.send('0')
        } else {
           var FFTemplate = '1'
-          res.send(1)
+          res.send('1')
        }
        console.log('Template Toggled')
      } else {
