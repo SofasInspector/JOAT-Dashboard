@@ -1,31 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
     const url = 'https://staging-joat-dashboard-web-server.onrender.com';
 
-    // Get the checkboxs elements
-    const sliderjoat = document.getElementById('sliderjoat');
-    const sliderjoatpath = '/ff/JOATWS'
+    // Get the checkbox elements and their corresponding variable names
+    const checkboxes = {
+        'sliderjoat': '/ff/JOATWS',
+    };
 
     // Function to update checkbox state based on server response
-    function updateCheckboxState(path) {
-        // Fetch the state from the server
-        axios.get(url + path)
+    function updateCheckboxState(checkboxElement, apiUrl) {
+        axios.get(url + apiUrl)
             .then(response => {
-                sliderjoat.checked = (parseInt(response.data, 10) === 1);
+                checkboxElement.checked = (parseInt(response.data, 10) === 1);
             })
     }
 
+    // Function to handle checkbox change event
+    function handleCheckboxChange(checkboxElement, apiUrl) {
+        checkboxElement.addEventListener('change', function() {
+            axios.get(url + apiUrl + '/toggle', {
+                params: {
+                    Authorization: 'supersecretpassword',
+                }
+            })
+        });
+    }
 
-    // Add event listener for checkbox change event
-    sliderjoat.addEventListener('change', function() {
-        // Perform actions based on the slider value
-        axios.get(url + '/ff/JOATWS/toggle', {
-            params: {
-                Authorization: 'supersecretpassword',
-            }
-        })
-    });
-
-
-        // Initial update of checkbox state
-        updateCheckboxState(sliderjoatpath);
+    for (const checkboxName in checkboxes) {
+        if (checkboxes.hasOwnProperty(checkboxName)) {
+            const apiUrl = checkboxes[checkboxName];
+            const checkboxElement = document.getElementById(checkboxName);
+            updateCheckboxState(checkboxElement, apiUrl);
+            handleCheckboxChange(checkboxElement, apiUrl);
+        }
+    }
 });
