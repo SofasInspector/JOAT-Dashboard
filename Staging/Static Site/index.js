@@ -3,7 +3,7 @@ const url = 'https://staging-joat-dashboard-web-server.onrender.com'
 const sliderjoat = document.getElementById('sliderjoat');
 console.log('js running')
 
-//do later (sider lock)
+///do later (sider lock)
 // Event listener for the lock button
     // Disable or enable the slider based on the lock status
 //    slider1.disabled = !slider1.disabled;
