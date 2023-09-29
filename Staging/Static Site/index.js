@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const url = 'https://staging-joat-dashboard-web-server.onrender.com';
 
     // Get the checkboxs elements
-    const sliderjoat = document.getElementById('slider-joat');
+    const sliderjoat = document.getElementById('sliderjoat');
     const sliderjoatpath = '/ff/JOATWS'
 
     // Function to update checkbox state based on server response
