@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 const url = 'https://staging-joat-dashboard-web-server.onrender.com/'
 const sliderjoat = document.getElementById('slider-joat');
-
+console.log('js running')
 
 //do later (sider lock)
 // Event listener for the lock button
@@ -21,6 +21,7 @@ const sliderjoat = document.getElementById('slider-joat');
 
 // Event listener for the slider value change
 sliderjoat.addEventListener('change', function() {
+    console.log('slider change detected')
     // Check if the slider is not disabled (unlocked)
     if (!slider1.disabled) {
         // Perform actions based on the slider value
