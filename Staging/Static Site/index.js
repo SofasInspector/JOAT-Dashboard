@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-const url = 'https://staging-joat-dashboard-web-server.onrender.com/'
+const url = 'https://staging-joat-dashboard-web-server.onrender.com'
 const sliderjoat = document.getElementById('sliderjoat');
 console.log('js running')
 
